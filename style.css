@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-red: #FF4444;
+    --color-yellow: #FFD700;
+    --color-orange: #FF8C42;
+    --color-blue: #4A90E2;
+    --color-dark: #2C3E50;
+    --color-light: #F5F5F5;
+    --color-white: #FFFFFF;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Colakind Font - using Fredoka One as alternative if font file not available */
+@font-face {
+    font-family: 'Fredoka One';
+    src: url('fonts/FredokaOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* Header */
+.header {
+    background: var(--color-white);
+    color: var(--color-blue);
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 700;
+    font-family: 'Fredoka One';
+}
+
+.logo .subtitle {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background: var(--color-white);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav a {
+   color: var(--color-white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    color: var(--color-blue);
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff; /* Warna garis biru */
+  
+  /* Animasi dari tengah */
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav a.active::after {
+  transform: scaleX(1);
+  background-color: #007bff; /* Pastikan warna tetap biru */
+}
+
+/* Hero Banner Section */
+.hero-banner {
+    background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-orange) 100%);
+    color: var(--color-white);
+    padding: 8rem 0;
+    text-align: center;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-family: 'Fredoka One', cursive;
+    animation: fadeInUp 0.8s ease;
+}
+
+.banner-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.beranda {
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    min-height: 88vh;
+    padding: 0 130px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.733)),url(image/skanilan.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.carousel-area {
+    flex: 1.2;
+}
+
+.carousel-box {
+    max-width: 37em;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    display: flex;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.45, 0, 0.15, 1);
+}
+
+.slide {
+    display: block;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    flex-shrink: none;
+    animation: fadeEffect 1s;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Sisi Kanan: Teks */
+.info-area {
+  flex: 0.8;
+}
+
+.tagline {
+    color: #007bff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.text-wrapper h1 {
+    line-height: 1.2;
+    font-size: 2.7em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.text-wrapper p {
+    font-size: 1.2em;
+    font-weight: 1.5em;
+    color: #007bff;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* Styling Tombol */
+.cta-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid #007bff;
+    transition: 0.3s;
+}
+
+.btn-secondary {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid #007bff;
+    transition: 0.3s;
+}
+
+.btn-primary:hover { 
+    background: transparent;
+    color: #007bff;
+}
+.btn-secondary:hover { 
+    background: transparent; 
+    color: #007bff;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.103);
+    border: none;
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+.arrow:hover { background: #007bff;; color: white; }
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* Styling Titik (Dots) */
+.dots-container {
+    margin-top: 15px;
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #007bff;
+    width: 25px; /* Efek memanjang untuk yang aktif */
+    border-radius: 10px;
+}

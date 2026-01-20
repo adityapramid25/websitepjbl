@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Skanilan Tech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="image/logoskanilan.png" draggable="false" alt="Thinkora Logo" class="logo-img">
+                <h1>Skanilan</h1>
+            </div>
+            <button class="hamburger-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav">
+                <a href="index.html" class="active">Beranda</a>
+                <a href="#">Produk</a>
+                <a href="#">Tentang Kami</a>
+            </nav>
+        </div>
+    </header>
+<section class="beranda">
+    <div class="carousel-area">
+        <div class="carousel-box">
+        <button class="arrow prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="arrow next" onclick="changeSlide(1)">&#10095;</button>
+
+        <div class="carousel-track" id="track">
+            <div class="slide active"><img src="image/carousel5.jpg" alt="Visual 1"></div>
+            <div class="slide"><img src="image/skanilan.jpeg" alt="Visual 2"></div>
+            <div class="slide"><img src="image/iklan.jfif" alt="Visual 3"></div>
+        </div>
+        </div>
+
+        <div class="dots-container">
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </div>
+
+    <div class="info-area">
+        <div class="text-wrapper">
+        <span class="tagline">Inovasi Digital</span>
+        <h1>Selamat datang di Skanilan Tech</h1>
+        <p>Kami adalah tim siswa SMK N 9 Semarang yang berkomitmen untuk menciptakan 
+            solusi digital yang berguna, 
+            modern, dan tentunya mempermudah.
+            Yuk, kenalan dengan karya dan layanan kami!</p>
+        
+        <div class="cta-actions">
+            <a href="#" class="btn-primary">Produk kami</a>
+            <a href="#" class="btn-secondary">Contact</a>
+        </div>
+        </div>
+    </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>

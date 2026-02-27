@@ -29,7 +29,7 @@ window.onload = function() {
     // Munculkan setelah 1.5 detik
     setTimeout(() => {
         overlay.classList.add('show');
-    }, 1500);
+    }, 1000);
 
     // Fungsi tutup
     closeBtn.onclick = function() {
@@ -93,3 +93,4 @@ carouselBox.addEventListener('mouseleave', () => {
 // Inisialisasi tampilan pertama kali
 
 updateCarousel();
+

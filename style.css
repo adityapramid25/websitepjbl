@@ -208,7 +208,7 @@ body {
 }
 
 .carousel-box {
-    max-width: 37em;
+    max-width: 50em;
     height: auto;
     aspect-ratio: 16 / 9;
     overflow: hidden;
@@ -349,4 +349,5 @@ body {
     background: #007bff;
     width: 25px; /* Efek memanjang untuk yang aktif */
     border-radius: 10px;
+
 }

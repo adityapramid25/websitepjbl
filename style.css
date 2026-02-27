@@ -14,6 +14,10 @@
     --color-white: #FFFFFF;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* Colakind Font - using Fredoka One as alternative if font file not available */
@@ -245,6 +249,50 @@ body {
     animation: fadeInUp 0.8s ease 0.2s backwards;
 }
 
+/* About */
+
+#about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.about-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 150px;
+    gap: 10em;
+}
+
+.pict {
+    width: 800px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pict img {
+    width: 100%;
+    height: auto;
+}
+
+.description p {
+    text-align: justify;
+    width: 700px;
+    font-size: 20px;
+}
+
+.description a {
+    text-decoration: none;
+    color: white;
+    background-color: blue;
+    border-radius: 10px;
+    padding: 20px;
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -256,12 +304,12 @@ body {
     }
 }
 
-.beranda {
+#beranda {
     display: flex;
     justify-content: space-between;
     display: flex;
     align-items: center;
-    min-height: 88vh;
+    height: 100vh;
     padding: 0 130px;
     background-image: linear-gradient(rgba(255, 255, 255, 0.733)),url(image/skanilan.jpeg);
     background-position: center;
@@ -414,6 +462,4 @@ body {
     background: #007bff;
     width: 25px; /* Efek memanjang untuk yang aktif */
     border-radius: 10px;
-
 }
-

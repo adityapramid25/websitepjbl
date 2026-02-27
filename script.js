@@ -29,7 +29,7 @@ window.onload = function() {
     // Munculkan setelah 1.5 detik
     setTimeout(() => {
         overlay.classList.add('show');
-    }, 1000);
+    }, 1500);
 
     // Fungsi tutup
     closeBtn.onclick = function() {
@@ -43,21 +43,6 @@ window.onload = function() {
         }
     };
 };
-
-// 3. Fungsi untuk Navigasi Panah (Prev/Next)
-function changeSlide(n) {
-  slideIdx += n;
-
-  // Jika sampai di akhir, balik ke awal. Jika di awal, balik ke akhir.
-  if (slideIdx >= totalSlides) {
-    slideIdx = 0;
-  } else if (slideIdx < 0) {
-    slideIdx = totalSlides - 1;
-  }
-
-  updateCarousel();
-  resetTimer(); // Reset waktu agar tidak langsung bergeser setelah diklik manual
-}
 
 // 4. Fungsi untuk Navigasi Titik Indikator
 function currentSlide(n) {
@@ -91,6 +76,4 @@ carouselBox.addEventListener('mouseleave', () => {
 });
 
 // Inisialisasi tampilan pertama kali
-
 updateCarousel();
-

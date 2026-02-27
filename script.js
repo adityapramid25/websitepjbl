@@ -22,6 +22,28 @@ function updateCarousel() {
   });
 }
 
+window.onload = function() {
+    const overlay = document.getElementById('popup-overlay');
+    const closeBtn = document.getElementById('close-btn');
+
+    // Munculkan setelah 1.5 detik
+    setTimeout(() => {
+        overlay.classList.add('show');
+    }, 1500);
+
+    // Fungsi tutup
+    closeBtn.onclick = function() {
+        overlay.classList.remove('show');
+    };
+
+    // Tutup juga jika user klik di luar area gambar (di area hitam)
+    window.onclick = function(event) {
+        if (event.target == overlay) {
+            overlay.classList.remove('show');
+        }
+    };
+};
+
 // 3. Fungsi untuk Navigasi Panah (Prev/Next)
 function changeSlide(n) {
   slideIdx += n;
@@ -69,4 +91,5 @@ carouselBox.addEventListener('mouseleave', () => {
 });
 
 // Inisialisasi tampilan pertama kali
+
 updateCarousel();
